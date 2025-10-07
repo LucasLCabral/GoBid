@@ -1,0 +1,77 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of build tools
+/build/
+/bin/
+/dist/
+
+# Dependency directories
+/vendor/
+
+# Go workspace file
+*.code-workspace
+
+# Go modules
+/go.sum
+/go.mod
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+*.env
+.env.*
+.docker-compose*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Migration and SQLC output
+/internal/store/pgstore/migrations/
+/internal/store/pgstore/query/
+
+# Tern and SQLC generated files
+tern.log
+sqlc.log
+
+# Coverage
+coverage.out
+*.coverprofile
+
+# Node (if any JS tooling)
+node_modules/
+
+# Python (if any)
+__pycache__/
+*.pyc
+
+# Misc
+*.local
+*.secret
+*.bak
+*.old
+
+# Ignore GoBid specific local files
+/local.env
+/local.settings.json
