@@ -50,6 +50,7 @@ func main() {
 	api := api.API{
 		Router:      chi.NewMux(),
 		UserService: services.NewUserService(pool),
+		ProductsService: services.NewProductsService(pool),
 		Sessions:    s,
 	}
 	api.BindRoutes()

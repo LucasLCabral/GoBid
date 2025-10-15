@@ -26,6 +26,10 @@ func (a *API) HandleSignUpUser(w http.ResponseWriter, r *http.Request) {
 			})
 			return
 		}
+		_ = jsonutils.EncodeJson(w, r, http.StatusInternalServerError, map[string]any{
+			"error": "internal server error",
+		})
+		return
 	}
 
 	_ = jsonutils.EncodeJson(w, r, http.StatusCreated, map[string]any{
@@ -37,6 +41,7 @@ func (a *API) HandleLoginUser(w http.ResponseWriter, r *http.Request) {
 	data, problems, err := jsonutils.DecodeValidJson[user.LoginUserReq](r)
 	if err != nil {
 		_ = jsonutils.EncodeJson(w, r, http.StatusBadRequest, problems)
+		return
 	}
 	id, err := a.UserService.AuthenticateUser(r.Context(), data.Email, data.Password)
 	if err != nil {

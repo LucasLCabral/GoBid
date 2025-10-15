@@ -11,4 +11,5 @@ type API struct {
 	Router      *chi.Mux
 	UserService *services.UserService
 	Sessions    *scs.SessionManager
+	ProductsService *services.ProductsService
 }
